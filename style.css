@@ -1,0 +1,630 @@
+html {
+        scroll-behavior: smooth;
+}
+
+
+body {
+        margin: 30px;
+        font-family: 'Indie Flower', cursive;
+        background: #fef6e4;
+}
+
+.navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        background-color: #6fb3b8;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* seafoam green */
+        padding: 10px 20px;
+        color: white;
+        font-family: 'Borel', cursive;
+}
+
+.navbar .logo {
+        padding-left: 20px;
+        font-size: 30px;
+        color: hotpink;
+}
+
+.nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+}
+
+.nav-links li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+}
+
+.nav-icons {
+        padding-right: 80px;
+        display: flex;
+        gap: 15px;
+}
+
+/*.icon {
+        cursor: pointer;
+        position: relative;
+} */
+
+#cart-icon,
+#profile-icon {
+        padding-right: 20px;
+        display: flex;
+        gap: 20px;
+        font-size: 40px;
+        margin-right: 40px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+}
+
+
+#cart-icon:hover,
+#profile-icon:hover {
+        transform: scale(1.2);
+        color: #ee4266;
+        /* Hot pink or any theme color */
+}
+
+#cart-count {
+        background: red;
+        color: white;
+        padding: 6px 6px;
+        border-radius: 50%;
+        position: absolute;
+        top: -8px;
+        right: -12px;
+        font-size: 6px;
+}
+
+.modal-cart,
+.modal-profile {
+        display: none;
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        background-color: rgba(255, 255, 255, 0.95);
+        border: 2px solid #6fb3b8;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        padding: 15px;
+        z-index: 1000;
+        border-radius: 12px;
+}
+
+.cart-modal-content,
+.profile-modal-content h3 {
+        margin-top: 0;
+        color: #005f73;
+        /* navy/blue grotto */
+}
+
+.cart-modal-content,
+.profile-modal-content ul {
+        list-style: none;
+        padding-left: 0;
+}
+
+.cart-modal-content,
+.profile-modal-content button {
+        margin-top: 10px;
+        background: #ff6f91;
+        /* rose red */
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+}
+
+.hero {
+        line-height: 60px;
+        text-align: center;
+        padding: 80px 20px;
+        color: #003049;
+}
+
+.hero h1 {
+        font-size: 48px;
+        color: #ee4266;
+        /* rose red/hot pink mix */
+}
+
+.hero p {
+        font-size: 30px;
+}
+
+.info-section {
+        line-height: 40px;
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #e8f6f3;
+        /* light spearmint */
+        font-family: 'Indie Flower', cursive;
+}
+
+.info-section:nth-child(even) {
+        background-color: #fff0f5;
+        /* rosewater */
+}
+
+.info-section h2 {
+        font-size: 32px;
+        color: #003049;
+}
+
+.info-section p {
+        font-size: 18px;
+        color: #444;
+        max-width: 700px;
+        margin: 0 auto;
+}
+
+.card-container {
+        box-sizing: border-box;
+        margin: 5px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        padding: 40px 20px;
+        justify-content: center;
+}
+
+.drink-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 15px;
+        width: 220px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        font-family: 'Borel', cursive;
+}
+
+.drink-card:hover {
+        transform: scale(1.3);
+        transition: transform 0.8s ease-in-out;
+}
+
+.drink-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+}
+
+.drink-card h3 {
+        font-size: 20px;
+        margin: 10px 0 5px;
+        color: #ee4266;
+}
+
+.drink-card p {
+        font-size: 14px;
+        color: #555;
+}
+
+.explore-button {
+        margin-top: 3px;
+        background-color: #ff6f91;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        font-family: 'Indie Flower', cursive;
+}
+
+.footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        font-family: 'Borel', cursive;
+}
+
+.contact-form-link {
+        font-size: 18px;
+        color: #0077b6;
+        text-decoration: none;
+}
+
+.contact-form-link:hover {
+        color: #ff6f91;
+}
+
+.footer-icons i {
+        font-size: 50px;
+        color: #003049;
+        transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.footer-icons a:hover i {
+        transform: scale(1.3);
+        color: #ee4266;
+}
+
+.contact-details a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        font-size: 30px;
+        margin: 5px 0;
+        transition: transform 0.3s, color 0.3s;
+}
+
+.contact-details a:hover {
+        transform: scale(1.05);
+        color: #ee4266;
+}
+
+.subscribe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+}
+
+.subscribe label {
+        font-size: 20px;
+        color: #003049;
+        margin-bottom: 0;
+}
+
+.subscribe input {
+        font-size: 20px;
+        padding: 8px 12px;
+        gap: 0;
+        margin-top: 0;
+        border-radius: 10px;
+        border: 1px solid #aaa;
+        width: 300px;
+        font-family: 'Indie Flower', cursive;
+}
+
+.subscribe button {
+        margin-top: 8px;
+        background-color: #03c4a1;
+        color: white;
+        border: none;
+        padding: 6px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: 'Indie Flower', cursive;
+}
+
+.subscribe button:hover {
+        background-color: #009688;
+}
+
+#subscribe-message {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #0077b6;
+}
+
+.copyright {
+        margin-top: 20px;
+        font-size: 20px;
+        color: #444;
+}
+
+@keyframes fadeout {
+        0% {
+                opacity: 1;
+        }
+
+        80% {
+                opacity: 1;
+        }
+
+        100% {
+                opacity: 0;
+                transform: translateY(20px);
+        }
+
+}
+
+/* 
+.form-section {
+        padding: 60px 20px;
+        background-color: #fef6e4;
+        text-align: center;
+        font-family: 'Borel', cursive;
+}
+
+.form-section h2 {
+        font-size: 32px;
+        color: #003049;
+        margin-bottom: 30px;
+}
+
+form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        max-width: 400px;
+        margin: 0 auto;
+}
+
+form input,
+form textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-family: 'Indie Flower', cursive;
+}
+
+form button {
+        background-color: #ee4266;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: 'Indie Flower', cursive;
+}
+
+form button:hover {
+        background-color: #d61c4e;
+} */
+
+
+.modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+}
+
+.contact-modal-content {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+        font-family: 'Borel', cursive;
+}
+
+.contact-modal-content input,
+.contact-modal-content textarea {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-family: 'Indie Flower', cursive;
+}
+
+.contact-modal-content button {
+        margin-top: 10px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        background-color: #03c4a1;
+        color: white;
+        font-family: 'Indie Flower', cursive;
+        cursor: pointer;
+}
+
+.contact-close-btn {
+        background-color: #999;
+        margin-left: 10px;
+}
+
+.contact-modal-content button:hover {
+        opacity: 0.9;
+}
+
+
+/* cart overlay */
+.cart-overlay {
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        width: 300px;
+        max-height: 80vh;
+        overflow-y: auto;
+        background: #fff;
+        border: 2px solid hotpink;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+        padding: 20px;
+        transition: transform 0.3s ease-in-out;
+}
+
+.cart-overlay.hidden {
+        display: none;
+}
+
+.cart-content h2 {
+        margin-top: 0;
+        font-family: "Borel", cursive;
+}
+
+#cartItems {
+        list-style: none;
+        padding-left: 0;
+        margin: 15px 0;
+}
+
+#cartItems li {
+        margin-bottom: 10px;
+        font-family: "Indie Flower", cursive;
+        display: flex;
+        justify-content: space-between;
+}
+
+#cartOverlay button {
+        background-color: hotpink;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-family: "Indie Flower", cursive;
+}
+
+
+/* authentication modal */
+/* .auth-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+}
+
+.auth-modal {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        width: 300px;
+        animation: fadeIn 0.4s ease-in-out;
+}
+
+.auth-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+}
+
+.auth-form input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+}
+
+.auth-form button {
+        padding: 10px;
+        background: #0077cc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+.auth-form a {
+        color: #0077cc;
+        text-decoration: underline;
+        cursor: pointer;
+}
+
+.hidden {
+        display: none;
+}
+
+@keyframes fadeIn {
+        from {
+                opacity: 0;
+                transform: translateY(-10px);
+        }
+
+        to {
+                opacity: 1;
+                transform: translateY(0);
+        }
+} */
+
+/* Shared Modal Styling */
+.auth-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+}
+
+.auth-modal {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        width: 300px;
+        animation: fadeIn 0.4s ease-in-out;
+}
+
+.auth-form {
+        border: 2px solid hotpink;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+}
+
+.auth-form h2 {
+        font-size: 40px;
+        text-align: center;
+        color: #003049;
+        font-family: 'Borel', cursive;
+
+}
+
+.auth-form input {
+        font-size: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+}
+
+.auth-form button {
+        font-size: 20px;
+        padding: 10px;
+        background: hotpink;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+.auth-form a {
+        font-size: 20px;
+        color: #ff2768;
+        text-decoration: underline;
+        cursor: pointer;
+}
+
+.hidden {
+        display: none;
+}
+
+@keyframes fadeIn {
+        from {
+                opacity: 0;
+                transform: translateY(-10px);
+        }
+
+        to {
+                opacity: 1;
+                transform: translateY(0);
+        }
+}

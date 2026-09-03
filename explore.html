@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Explore Menu - Oasis</title>
+        <link rel="stylesheet" href="explore.css" />
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Borel&display=swap" rel="stylesheet">
+</head>
+
+<body>
+        <!-- Navbar -->
+        <nav class="navbar">
+                <div class="nav-left">
+                        <a href="index.html" class="back-arrow"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <div class="nav-links">
+                        <a href="#tea" class="nav-link active" data-category="Tea">Tea</a>
+                        <a href="#coffee" class="nav-link" data-category="Coffee">Coffee</a>
+                        <a href="#shakes" class="nav-link" data-category="Shake">Shakes</a>
+                        <a href="#smoothies" class="nav-link" data-category="Smoothie">Smoothies</a>
+                        <a href="#mojitos" class="nav-link" data-category="Mojito">Mojitos</a>
+                </div>
+                <div class="icons">
+                        <div class="cart-icon" id="cart-icon">
+                                <i class='bx bx-cart' id="cartIcon"></i>
+                                <span class="badge" id="cart-count">0</span>
+                        </div>
+                        <div class="profile-icon" id="profile-icon">
+                                <i class='bx bx-user'></i>
+                        </div>
+                </div>
+        </nav>
+
+        <!-- Cart Overlay -->
+        <div id="cartOverlay" class="cart-overlay hidden">
+                <div class="cart-content">
+                        <h2>Your Cart</h2>
+                        <ul id="cartItems"></ul>
+                        <p><strong>Total:</strong> ₹<span id="cartTotal">0</span></p>
+                        <button onclick="location.href='checkout.php'">Checkout</button>
+                        <button onclick="toggleCart()">Close</button>
+                </div>
+        </div>
+
+        <!-- Drink Sections -->
+        <div class="menu-container">
+                <!-- Tea Section -->
+                <section id="tea" class="drink-section active-section">
+                        <div class="card-container">
+                                <div class="drink-card">
+                                        <img src="images/products/Herbal Tea.jpeg" alt=" herbal Tea">
+                                        <h3>Masala Chai</h3>
+                                        <p>A spicy, aromatic Indian tea with milk and herbs.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="1">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Iced Tea.jpeg" alt="iced Tea">
+                                        <h3>Iced Tea</h3>
+                                        <p>Refreshing iced tea with a hint of lemon.</p>
+                                        <p class="price">Rs.40</p>
+                                        <button class="add-to-cart-btn" data-id="2">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Black Tea.jpeg" alt="Black Tea">
+                                        <h3>Black Tea</h3>
+                                        <p>Strong and bold black tea, perfect for mornings.</p>
+                                        <p class="price">Rs.30</p>
+                                        <button class="add-to-cart-btn" data-id="3">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Green Tea.jpeg" alt="Green Tea">
+                                        <h3>Green Tea</h3>
+                                        <p>Refreshing green tea with a hint of mint.</p>
+                                        <p class="price">Rs.60</p>
+                                        <button class="add-to-cart-btn" data-id="4">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/White Tea.jpeg" alt="White Tea">
+                                        <h3>White Tea</h3>
+                                        <p>Delicate and light white tea with floral notes.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="5">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Ginger Tea.jpeg" alt="Ginger Tea">
+                                        <h3>Ginger Tea</h3 <p>Spicy ginger tea, perfect for cold days.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="6">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Matcha Tea.jpeg" alt="Matcha Tea">
+                                        <h3>Matcha Tea</h3>
+                                        <p>Rich and creamy matcha latte with a hint of sweetness.</p>
+                                        <p class="price">Rs.50</p>\
+                                        <button class="add-to-cart-btn" data-id="7">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Oolong Tea.jpeg" alt="Oolong Tea">
+                                        <h3>Oolong Tea</h3>
+                                        <p>Traditional Chinese tea with a unique flavor.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="8">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Jasmine Tea.jpeg" alt="jasmine Tea">
+                                        <h3>Jasmine Tea</h3>
+                                        <p>Fragrant jasmine tea with a floral aroma.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="9">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Lavender Tea.jpeg" alt="Lavender Tea">
+                                        <h3>Lavender Tea</h3>
+                                        <p>Relaxing lavender tea with calming properties.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="10">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Chamomile Tea.jpeg" alt="Chamomile Tea">
+                                        <h3>Chamomile Tea</h3>
+                                        <p>Soothing chamomile tea, perfect for bedtime.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="11">Add to Cart</button>
+                                </div>
+                        </div>
+                </section>
+
+                <!-- Coffee Section -->
+                <section id="coffee" class="drink-section">
+                        <div class="card-container">
+                                <div class="drink-card">
+                                        <img src="images/products/Milk Coffee.jpeg" alt="Milk Coffee">
+                                        <h3>Milk Coffee</h3>
+                                        <p>Classic milk coffee with a rich aroma.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="12">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Black Coffee.jpeg" alt="black Coffee">
+                                        <h3>Black Coffee</h3>
+                                        <p>Strong and bold black coffee for coffee lovers.</p>
+                                        <p class="price">Rs.40</p>
+                                        <button class="add-to-cart-btn" data-id="13">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Decaf Coffee.jpeg" alt="Decaf Coffee">
+                                        <h3>Decaf Coffee</h3>
+                                        <p>Decaffeinated coffee for a relaxing experience.</p>
+                                        <p class="price">Rs.30</p>
+                                        <button class="add-to-cart-btn" data-id="14">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Iced  Coffee.jpeg" alt="Iced Coffee">
+                                        <h3>Iced Coffee</h3>
+                                        <p>Refreshing iced coffee with a hint of vanilla.</p>
+                                        <p class="price">Rs.60</p>
+                                        <button class="add-to-cart-btn" data-id="15">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/White Coffee.jpeg" alt="White coffee">
+                                        <h3>White Coffee</h3>
+                                        <p>Light and creamy white coffee with a smooth finish.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="16">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Regular Coffee.jpeg" alt="Regular Coffee">
+                                        <h3>Regular Coffee</h3>
+                                        <p>Classic regular coffee with a rich flavor.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="17">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Turkish Coffee.jpeg" alt="Turkish Coffee">
+                                        <h3>Turkish Coffee</h3>
+                                        <p>Strong and aromatic Turkish coffee with spices.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="18">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Pour Over Coffee.jpeg" alt="Pour Over Coffee">
+                                        <h3>Pour Over Coffee</h3>
+                                        <p>Delicate pour-over coffee with a smooth taste.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="19">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/French Press Coffee.jpeg" alt="french Press Coffee">
+                                        <h3>French Press Coffee</h3>
+                                        <p>Rich and full-bodied French press coffee.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="20">Add to Cart</button>
+                                </div>
+                        </div>
+                </section>
+
+                <!-- Shakes Section -->
+                <section id="shakes" class="drink-section">
+                        <div class="card-container">
+                                <div class="drink-card">
+                                        <img src="images/products/Oreo Shake.jpeg" alt="Oreo Shake">
+                                        <h3>Oreo Shake</h3>
+                                        <p>Delicious Oreo shake with whipped cream.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="21">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Mango Shake.jpeg" alt="Mango Shake">
+                                        <h3>Mango Shake</h3>
+                                        <p>Refreshing mango shake with a tropical twist.</p>
+                                        <p class="price">Rs.40</p>
+                                        <button class="add-to-cart-btn" data-id="22">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Coffee Shake.jpeg" alt="Coffee Shake">
+                                        <h3>Coffee Shake</h3>
+                                        <p>Rich coffee shake with a hint of chocolate.</p>
+                                        <p class="price">Rs.30</p>
+                                        <button class="add-to-cart-btn" data-id="23">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Mixed Fruit Shake.jpeg" alt="Mixed Fruit Shake">
+                                        <h3>Mixed Fruit Shake</h3>
+                                        <p>Refreshing mixed fruit shake with seasonal fruits.</p>
+                                        <p class="price">Rs.60</p>
+                                        <button class="add-to-cart-btn" data-id="24">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Watermelon Shake.jpeg" alt="Watermelon Shake">
+                                        <h3>Watermelon Shake</h3>
+                                        <p>Cool watermelon shake, perfect for summer.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="25">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Pomegranate Shake.jpeg" alt="Pomegranate Shake">
+                                        <h3>Pomegranate Shake</h3>
+                                        <p>Refreshing pomegranate shake with a hint of mint.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="26">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Blueberry Shake.jpeg" alt="Blueberry Shake">
+                                        <h3>Blueberry Shake</h3>
+                                        <p>Delicious blueberry shake with a creamy texture.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="27">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Blackberry Shake.jpeg" alt="Blackberry Shake">
+                                        <h3>Blackberry Shake</h3>
+                                        <p>Rich blackberry shake with a hint of vanilla.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="28">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Cherry Shake.jpeg" alt="Cherry Shake">
+                                        <h3>Cherry Shake</h3>
+                                        <p>Sweet cherry shake with a creamy finish.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="29">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Strawberry Shake.jpeg" alt="Strawberry Shake">
+                                        <h3>Strawberry Shake</h3>
+                                        <p>Delicious strawberry shake with whipped cream.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="30">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Chocolate shake.jpeg" alt="Chocolate Shake">
+                                        <h3>Chocolate Shake</h3>
+                                        <p>Rich chocolate shake with a creamy texture.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="31">Add to Cart</button>
+                                </div>
+                        </div>
+                </section>
+
+                <!-- Smoothies Section -->
+                <section id="smoothies" class="drink-section">
+                        <div class="card-container">
+                                <div class="drink-card">
+                                        <img src="images/products/Strawberry Smoothie.jpeg" alt="Strawberry Smoothie">
+                                        <h3>Strawberry Smoothie</h3>
+                                        <p>Refreshing strawberry smoothie with yogurt.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="32">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Mango Smoothie.jpeg" alt="Mango Smoothie">
+                                        <h3>Mango Smoothie</h3>
+                                        <p>Delicious mango smoothie with a tropical twist.</p>
+                                        <p class="price">Rs.40</p>
+                                        <button class="add-to-cart-btn" data-id="33">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Peanut Butter Banana Smoothie.jpeg"
+                                                alt="Peanut Butter Banana Smoothie">
+                                        <h3>Peanut Butter Banana Smoothie</h3>
+                                        <p>Rich peanut butter banana smoothie with a creamy texture.</p>
+                                        <p class="price">Rs.30</p>
+                                        <button class="add-to-cart-btn" data-id="34">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Apple Cinnamon Smoothie.jpeg"
+                                                alt="Apple Cinnamon Smoothie">
+                                        <h3>Apple Cinnamon Smoothie</h3>
+                                        <p>Refreshing apple cinnamon smoothie with a hint of spice.</p>
+                                        <p class="price">Rs.60</p>
+                                        <button class="add-to-cart-btn" data-id="35">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Tropical Paradise Smoothie.jpeg"
+                                                alt="Tropical Paradise Smoothie">
+                                        <h3>Tropical Paradise Smoothie</h3>
+                                        <p>Cool tropical smoothie with a mix of fruits.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="36">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Berry Blast Smoothie.jpeg" alt="Berry Blast Smoothie">
+                                        <h3>Berry Blast Smoothie</h3>
+                                        <p>Delicious berry smoothie with a creamy texture.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="37">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Green Goddess Smoothie.jpeg"
+                                                alt="Green Goddess Smoothie">
+                                        <h3>Green Goddess Smoothie</h3>
+                                        <p>Refreshing green smoothie with spinach and fruits.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="38">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Blueberry Smoothie.jpeg" alt="Blueberry Smoothie">
+                                        <h3>Blueberry Smoothie</h3>
+                                        <p>Rich blueberry smoothie with a hint of vanilla.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="39">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Blackberry Smoothie.jpeg" alt="Blackberry Smoothie">
+                                        <h3>Blackberry Smoothie</h3>
+                                        <p>Sweet blackberry smoothie with a creamy finish.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="40">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Pineapple Smoothie.jpeg" alt="Pineapple Smoothie">
+                                        <h3>Pineapple Smoothie</h3>
+                                        <p>Refreshing pineapple smoothie with a tropical twist.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="41">Add to Cart</button>
+                                </div>
+                        </div>
+                </section>
+
+                <!-- Mojitos Section -->
+                <section id="mojitos" class="drink-section">
+                        <div class="card-container">
+                                <div class="drink-card">
+                                        <img src="images/products/Grapefruit Mojito.jpeg" alt="Grapefruit Mojito">
+                                        <h3>Grapefruit Mojito</h3>
+                                        <p>Refreshing grapefruit mojito with mint and lime.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="42">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Cranberry Mojito.jpeg" alt="Cranberry Mojito">
+                                        <h3>Cranberry Mojito</h3>
+                                        <p>Delicious cranberry mojito with a hint of mint.</p>
+                                        <p class="price">Rs.40</p>
+                                        <button class="add-to-cart-btn" data-id="43">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Blood Orange Mojito.jpeg" alt="Blood Orange Mojito">
+                                        <h3>Blood Orange Mojito</h3>
+                                        <p>Rich blood orange mojito with a hint of sweetness.</p>
+                                        <p class="price">Rs.30</p>
+                                        <button class="add-to-cart-btn" data-id="44">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Passion Fruit Mojito.jpeg" alt="Passion Fruit Mojito">
+                                        <h3>Passion Fruit Mojito</h3>
+                                        <p>Refreshing passion fruit mojito with a tropical twist.</p>
+                                        <p class="price">Rs.60</p>
+                                        <button class="add-to-cart-btn" data-id="45">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Kiwi Mojito.jpeg" alt="Kiwi Mojito">
+                                        <h3>Kiwi Mojito</h3>
+                                        <p>Cool kiwi mojito with a hint of mint.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="46">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Pomegranate Mojito.jpeg" alt="Pomegranate Mojito">
+                                        <h3>Pomegranate Mojito</h3>
+                                        <p>Refreshing pomegranate mojito with a hint of mint.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="47">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Lychee Mojito.jpeg" alt="Lychee Mojito">
+                                        <h3>Lychee Mojito</h3>
+                                        <p>Delicious lychee mojito with a hint of sweetness.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="48">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Raspberry Mojito.jpeg" alt="Raspberry Mojito">
+                                        <h3>Raspberry Mojito</h3>
+                                        <p>Sweet raspberry mojito with a creamy finish.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="49">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Watermelon Mojito.jpeg" data-id="50"
+                                                alt="Watermelon Mojito">
+                                        <h3>Watermelon Mojito</h3>
+                                        <p>Refreshing watermelon mojito with a hint of mint.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="50">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Pineapple Mojito.jpeg" alt="Pineapple Mojito">
+                                        <h3>Pineapple Mojito</h3>
+                                        <p>Delicious pineapple mojito with a tropical twist.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="51">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Strawberry Mojito.jpeg" alt="Strawberry Mojito">
+                                        <h3>Strawberry Mojito</h3>
+                                        <p>Sweet strawberry mojito with a creamy finish.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="52">Add to Cart</button>
+                                </div>
+                                <div class="drink-card">
+                                        <img src="images/products/Classic Mojito.jpeg" alt="Classic Mojito">
+                                        <h3>Classic Mojito</h3>
+                                        <p>Refreshing classic mojito with mint and lime.</p>
+                                        <p class="price">Rs.50</p>
+                                        <button class="add-to-cart-btn" data-id="53">Add to Cart</button>
+                                </div>
+                        </div>
+                </section>
+        </div>
+
+        <!-- Cart Overlay -->
+        <div class="overlay cart-overlay hidden" id="cart-overlay">
+                <h3>Your Cart</h3>
+                <div id="cart-items">
+                        <p>No items in cart.</p>
+                </div>
+                <button id="checkout-btn">Checkout</button>
+        </div>
+
+        <!-- Profile Overlay -->
+        <div class="overlay profile-overlay hidden" id="profile-overlay">
+                <h3>User Profile</h3>
+                <button>Edit Information</button>
+                <button>Order History</button>
+        </div>
+
+        <script src="explore.js"></script>
+        <script src="cart.js"></script>
+</body>
+
+</html>
